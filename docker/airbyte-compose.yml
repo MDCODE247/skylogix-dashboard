@@ -1,0 +1,12 @@
+services:
+  airbyte:
+    image: airbyte/airbyte:0.51.11-alpha
+    container_name: airbyte
+    ports:
+      - "8000:8000"
+    volumes:
+      - airbyte_data:/data
+    restart: unless-stopped
+
+volumes:
+  airbyte_data:
